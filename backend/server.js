@@ -24,6 +24,8 @@ app.use('/api/auth', authRoutes);
 const problemRoutes = require('./routes/problems');
 app.use('/api/problems', problemRoutes);
 
+const analyticsRoutes = require('./routes/analytics');
+app.use('/api/analytics', analyticsRoutes);
 
 app.get("/", (req,res) => {
     res.json({message : "CP Analytics API is running"});
