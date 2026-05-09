@@ -9,7 +9,7 @@ const problemSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true,
-        trim: trusted
+        trim: true
     },
     platform: {
         type: String,
