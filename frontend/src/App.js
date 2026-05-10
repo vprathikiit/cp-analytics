@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { useAuth } from './context/AuthContext';
 import Login from './pages/Login'
 import Register from './pages/Register';
+import Dashboard from './pages/Dashboard';
 import './App.css'
 
 function App() {
@@ -20,11 +21,7 @@ function App() {
     );
   }
 
-  return (
-    <div className='App'>
-      <h1>Welcome, {user.username}!</h1>
-    </div>
-  );
+  return <Dashboard />;
 }
 
 export default App;
