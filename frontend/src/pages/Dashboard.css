@@ -166,3 +166,16 @@
     color: #666;
 }
 
+.add-btn {
+    padding: 8px 16px;
+    background-color: #22c55e;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.add-btn:hover {
+    background-color: #16a34a;
+}

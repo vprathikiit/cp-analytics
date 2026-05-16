@@ -3,7 +3,7 @@ import { useAuth} from '../context/AuthContext';
 import { getDashboard, getWeakTopics } from '../utils/api';
 import './Dashboard.css';
 
-const Dashboard = () => {
+const Dashboard = ({onAddProblem}) => {
     const {user, logoutUser} = useAuth();
     const [stats, setStats] = useState(null);
     const [weakTopics, setWeakTopics] = useState([]);
@@ -39,6 +39,7 @@ const Dashboard = () => {
                 <h1>CP Analytics</h1>
                 <div className='header-right'>
                     <span>Welcome, {user?.username}!</span>
+                    <button onClick={onAddProblem} className='add-btn'>+ Add Problem</button>
                     <button onClick={logoutUser}>Logout</button>
                 </div>
             </div>
