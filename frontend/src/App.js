@@ -4,6 +4,7 @@ import Login from './pages/Login'
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import AddProblem from './pages/AddProblem';
+import History from './pages/History';
 import './App.css'
 
 function App() {
@@ -27,7 +28,14 @@ function App() {
     return <AddProblem onBack={() => setCurrentPage('dashboard')}/>
   }
 
-  return <Dashboard onAddProblem={() => setCurrentPage('addProblem')}/>;
+  if(currentPage === "history") {
+    return <History onBack={() => setCurrentPage('dashboard')}/>
+  }
+
+  return <Dashboard 
+    onAddProblem={() => setCurrentPage('addProblem')}
+    onHistory={() => setCurrentPage('history')}
+  />;
 }
 
 export default App;
