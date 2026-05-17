@@ -5,6 +5,7 @@ import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import AddProblem from './pages/AddProblem';
 import History from './pages/History';
+import Revision from './pages/Revision';
 import './App.css'
 
 function App() {
@@ -32,9 +33,14 @@ function App() {
     return <History onBack={() => setCurrentPage('dashboard')}/>
   }
 
+  if (currentPage === 'revision') {
+    return <Revision onBack={() => setCurrentPage('dashboard')} />;
+  }
+
   return <Dashboard 
     onAddProblem={() => setCurrentPage('addProblem')}
     onHistory={() => setCurrentPage('history')}
+    onRevision={() => setCurrentPage('revision')}
   />;
 }
 

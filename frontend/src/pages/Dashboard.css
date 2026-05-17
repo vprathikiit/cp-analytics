@@ -193,3 +193,17 @@
 .history-btn:hover {
     background-color: #4338ca;
 }
+
+.revision-btn {
+    padding: 8px 16px;
+    background-color: #f59e0b;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.revision-btn:hover {
+    background-color: #d97706;
+}
