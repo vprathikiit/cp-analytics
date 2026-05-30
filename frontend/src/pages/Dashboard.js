@@ -3,8 +3,8 @@ import { useAuth} from '../context/AuthContext';
 import { getDashboard, getWeakTopics } from '../utils/api';
 import './Dashboard.css';
 
-const Dashboard = ({onAddProblem, onHistory, onRevision}) => {
-    const {user, logoutUser} = useAuth();
+const Dashboard = () => {
+    const {user} = useAuth();
     const [stats, setStats] = useState(null);
     const [weakTopics, setWeakTopics] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -35,17 +35,6 @@ const Dashboard = ({onAddProblem, onHistory, onRevision}) => {
 
     return (
         <div className='dashboard'>
-            <div className='dashboard-header'>
-                <h1>CP Analytics</h1>
-                <div className='header-right'>
-                    <span>Welcome, {user?.username}!</span>
-                    <button onClick={onAddProblem} className='add-btn'>+ Add Problem</button>
-                    <button onClick={onHistory} className='history-btn'>📋 History</button>
-                    <button onClick={onRevision} className='revision-btn'>📅 Revision</button>
-                    <button onClick={logoutUser}>Logout</button>
-                </div>
-            </div>
-
             <div className='stats-grid'>
                 <div className='stat-card'>
                     <h3>Total Solved</h3>

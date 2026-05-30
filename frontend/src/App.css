@@ -13,3 +13,9 @@ body {
 .App {
   min-height: 100vh;
 }
+
+.page-content {
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}

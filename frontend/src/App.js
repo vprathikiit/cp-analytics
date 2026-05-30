@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard';
 import AddProblem from './pages/AddProblem';
 import History from './pages/History';
 import Revision from './pages/Revision';
+import Navbar from './pages/Navbar';
 import './App.css'
 
 function App() {
@@ -25,23 +26,27 @@ function App() {
     );
   }
 
-  if(currentPage === "addProblem") {
-    return <AddProblem onBack={() => setCurrentPage('dashboard')}/>
-  }
+  const renderPage = () => {
+    switch (currentPage) {
+      case 'addProblem':
+        return <AddProblem onBack={() => setCurrentPage('dashboard')} />;
+      case 'history':
+        return <History onBack={() => setCurrentPage('dashboard')} />;
+      case 'revision':
+        return <Revision onBack={() => setCurrentPage('dashboard')} />;
+      default:
+        return <Dashboard />;
+    }
+  };
 
-  if(currentPage === "history") {
-    return <History onBack={() => setCurrentPage('dashboard')}/>
-  }
-
-  if (currentPage === 'revision') {
-    return <Revision onBack={() => setCurrentPage('dashboard')} />;
-  }
-
-  return <Dashboard 
-    onAddProblem={() => setCurrentPage('addProblem')}
-    onHistory={() => setCurrentPage('history')}
-    onRevision={() => setCurrentPage('revision')}
-  />;
+  return (
+    <div className="App">
+      <Navbar currentPage={currentPage} onNavigate={setCurrentPage} />
+      <div className="page-content">
+        {renderPage()}
+      </div>
+    </div>
+  );
 }
 
 export default App;
